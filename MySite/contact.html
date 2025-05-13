@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Save Polar Bears</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body class="contact-page">
+    <header>
+        <nav id="navbar">
+            <a href="index.html">Homepage</a>
+            <a href="about.html">About</a>
+            <a href="videos.html">Videos</a>
+            <a href="contact.html" class="active-link">Contact</a>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <div class="form-container">
+            <button id="darkModeToggle">Toggle Dark Mode</button>
+
+            <h1 id="contact-title">Conservation Videos</h1>
+            <img src="images/bear6.jpeg" alt="Contact Image">
+
+            <form id="contactForm" onsubmit="sendEmail(event)">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <div>
+                    <h2>Feedback</h2>
+                    <p>Help us improve our website:</p>
+                    <label><input type="checkbox" name="improvements[]" value="Conservation Efforts"> Conservation Efforts</label>
+                    <label><input type="checkbox" name="improvements[]" value="Educational Content"> Educational Content</label>
+                </div>
+                <div>
+                    <p>How satisfied were you with our website?</p>
+                    <label><input type="radio" name="satisfaction" value="Not at all"> Not at all</label>
+                    <label><input type="radio" name="satisfaction" value="Neutral"> Neutral</label>
+                    <label><input type="radio" name="satisfaction" value="Very satisfied"> Very satisfied</label>
+                </div>
+                <div>
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
+            <article>
+            <h2>Contact Us</h2>
+                <p>Feel free to contact us for any type of inquiry!
+                <br> Make sure to follow us on our social media accounts.
+            </p>
+        </article>
+        </div>
+    </main>
+
+    <div id="social-media">
+        <a href="https://m.facebook.com/PolarBearsInternational" target="_blank">Facebook</a>
+        <a href="https://x.com/polarbears?lang=en" target="_blank">Twitter</a>
+        <a href="https://www.instagram.com/polarbearsinternational/" target="_blank">Instagram</a>
+        <a href="https://www.tiktok.com/@polarbearsinternational" target="_blank">TikTok</a>
+    </div>
+    <footer>
+        <h3>@All Rights Reserved - Save Polar Bears</h3>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+    function sendEmail(event) {
+        event.preventDefault(); 
+
+        var subject = document.getElementById('subject').value;
+        var message = document.getElementById('message').value;
+
+        var mailto_link = 'mailto:support@savepolarbears.org'
+                        + '?subject=' + encodeURIComponent(subject)
+                        + '&body=' + encodeURIComponent(message);
+
+        window.location.href = mailto_link;
+    }
+    </script>
+</body>
+</html>

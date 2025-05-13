@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="mainMenu">
+        <input type="name" name="playersName" id="playersName" placeholder="Name">
+        <select type="difficulty" name="difficulty" id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="hard">Hard</option>
+        </select>
+        <button onclick="start()">Start</button>
+        <button onclick="showRules()">Show Rules</button>
+        <div id="leaderboardeasy">
+            <h2>Leader Board Easy</h2>
+            <table>
+
+            </table>
+        </div>
+        <div id="leaderboardhard">
+            <h2>Leader Board Hard</h2>
+            <table>
+
+            </table>
+        </div>
+    </div>
+
+    <div id="game">
+        <div id="gameInfo">
+            <span id="playersNameDisplay">Player</span>
+            <span id="timerDisplay">0</span>
+            <button onclick="validate()">Validate Game</button>
+        </div>
+        <div id="palette">
+            <img src="pics/tiles/curve_rail.png" alt="Curve Rail" class="draggable" draggable="true" data-type="curve">
+            <img src="pics/tiles/straight_rail.png" alt="Straight Rail" class="draggable" draggable="true"
+                data-type="straight">
+            <img src="pics/tiles/mountain_rail.png" alt="Mountain Rail" class="draggable" draggable="true"
+                data-type="mountain">
+            <img src="pics/tiles/bridge_rail.png" alt="Bridge Rail" class="draggable" draggable="true"
+                data-type="bridge">
+        </div>
+        <div id="gridContainer">
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
